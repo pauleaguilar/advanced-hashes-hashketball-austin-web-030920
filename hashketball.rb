@@ -1,7 +1,7 @@
 require "pry" #  binding.pry
 
 def game_hash
-  game_hash = {
+  hash = {
     :home => {
       :team_name => "Brooklyn Nets",
       :colors => ["Black", "White"],
@@ -115,6 +115,7 @@ def game_hash
       }
     }
   }
+  return hash
 end
 
 def num_points_scored (player_name)
