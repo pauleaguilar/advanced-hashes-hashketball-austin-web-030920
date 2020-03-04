@@ -126,24 +126,19 @@ def num_points_scored(player_name)
 end
 
 def shoe_size(players_name)
-  game_hash.each do |team, category|
-    team.each do |key, value|
-      if value.include?(players_name)
-        value.each do |player, stats|
-          if player == players_name
-             stats.each do |category, stat|
-
-               if category == :shoe
-
-                 # puts stat
-                 return stat
+  game_hash.each do |place, team|
+    team.each do |attribute, data|
+      if attribute == :players
+        data.each do |player|
+          if player[:player_name] == players_name
+            return player[:shoe]
           end
         end
       end
     end
   end
 end
-end
+
 
 
 def team_names
@@ -205,4 +200,4 @@ def big_shoe_rebounds
     end
   rebounds
 end
-end
+
