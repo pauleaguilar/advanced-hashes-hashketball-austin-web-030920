@@ -164,23 +164,23 @@ def shoe_size(athlete)
   solution
 end
 
-def team_colors(team)
-  solution = nil
+#works
+def team_names
+  teams = []
   game_hash.each do |location, team_data|
-     if game_hash[location][:team_name] == team
-      solution = game_hash[location][:colors].collect do |x|
-        x.to_s
-      end
+    teams << team_data[:team_name]
+  end
+  teams
+end
+#works
+def team_colors(team_name)
+  game_hash.each do |place, team|
+    if team[:team_name] == team_name
+      return team[:colors]
     end
   end
-solution.collect {|x| x.capitalize}
 end
 
-def team_names
-  game_hash.collect do |location, team_data|
-    game_hash[location][:team_name].to_s
-  end
-end
 
 def player_numbers(team) #This is a really janky way to solve the problem.
   team_numbers = []
