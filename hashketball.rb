@@ -147,8 +147,8 @@ end
 def num_points_scored(athlete)
   solution = nil
   game_hash.each do |location, team_data|
-    game_hash[location][:players].each do |attribute|                         
-      attribute.has_value?(athlete) ? solution = attribute.fetch(:points).to_i : nil      
+    game_hash[location][:players].each do |attribute|
+      attribute.has_value?(athlete) ? solution = attribute.fetch(:points).to_i : nil
       end
     end
     solution
@@ -187,12 +187,12 @@ def player_numbers(team) #This is a really janky way to solve the problem.
   game_hash.each do |location, team_data|
     if team  == "Brooklyn Nets"
       game_hash[:home][:players].each do |att|
-        team_numbers << att.fetch(:number).to_i 
+        team_numbers << att.fetch(:number).to_i
       end
 
     elsif team == "Charlotte Hornets"
       game_hash[:away][:players].each do |att|
-        team_numbers << att.fetch(:number).to_i 
+        team_numbers << att.fetch(:number).to_i
       end
     end
   end
@@ -209,7 +209,7 @@ def player_stats(player_name)
   solution = nil
   game_hash.each do |location, team_data|
       game_hash[location][:players].collect do |att|
-        if att.has_value?(player_name) 
+        if att.has_value?(player_name)
           solution = att
         end
     end
@@ -225,7 +225,7 @@ def big_shoe_rebounds
   game_hash.each do |location, team_data|
     game_hash[location][:players].each do |att|
       att.each do |k,v|
-        if k == :shoe 
+        if k == :shoe
          biggest_shoe << v
         end
       end
