@@ -1,6 +1,6 @@
 require "pry" #  binding.pry
 
-def game_hash  
+def game_hash
  game_hash = {
     :home => {
     :team_name => 'Brooklyn Nets',
@@ -37,7 +37,7 @@ end
 
 def num_points_scored(player_name)
 
-  game_hash.values.each do |team|  
+  game_hash.values.each do |team|
     team[:players].each do |player|
       return player[:points] if player.has_value?(player_name)
     end
@@ -48,7 +48,7 @@ end
 
 def shoe_size(player_name)
 
-  game_hash.values.each do |team_info|  
+  game_hash.values.each do |team_info|
     team_info[:players].each do |player|
       return player[:shoe] if player.has_value?(player_name)
     end
@@ -85,7 +85,7 @@ def player_stats(player_name)
   game_hash.values.each do |team_info|
     team_info[:players].each do |player|
       if player.has_value?(player_name)
-         player.delete(:player_name) 
+         player.delete(:player_name)
          return player
       end
     end
@@ -100,8 +100,8 @@ def big_shoe_rebounds
   game_hash.values.each do |team_info|
     team_info[:players].each do |player|
       if player[:shoe] > biggest_shoe
-        biggest_shoe = player[:shoe] 
-        player_rebounds = player[:rebounds] 
+        biggest_shoe = player[:shoe]
+        player_rebounds = player[:rebounds]
       end
     end
   end
