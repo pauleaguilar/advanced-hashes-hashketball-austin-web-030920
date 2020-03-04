@@ -193,15 +193,28 @@ def team_colors(team_name)
 end
 
 def big_shoe_rebounds
-  big_shoes_guy = 0
-  rebounds = 0
-    game_hash.each do | team, team_details_hash|
-      team_details_hash[:players].each do | stats |
-        if stats[:shoe] > big_shoes_guy
-          big_shoes_guy = stats[:shoe]
-          rebounds = stats[:rebounds]
+  a = ""
+  biggest_shoes = []
+  game_hash.each do |location, team_data|
+    team_data.each do |attributes, data|
+      if attributes == :players
+        data.each do |player_name, stats|
+          stats.each do |stat, numbers|
+            if stat == :shoe
+              biggest_shoes << numbers
+              biggest = biggest_shoes.max
+                if numbers == 19
+                  stats.each do |stat, numbers|
+                    if stat == :rebounds 
+                      a = numbers
+                    end
+                  end
+                end
+            end
+          end
         end
       end
     end
-  rebounds
+  end
+  a
 end
