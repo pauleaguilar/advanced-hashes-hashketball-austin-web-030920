@@ -126,8 +126,8 @@ end
 def num_points_scored(athlete)
   solution = nil
   game_hash.each do |location, team_data|
-    game_hash[location][:players].each do |attribute|                         
-      attribute.has_value?(athlete) ? solution = attribute.fetch(:points).to_i : nil      
+    game_hash[location][:players].each do |attribute|
+      attribute.has_value?(athlete) ? solution = attribute.fetch(:points).to_i : nil
       end
     end
     solution
@@ -206,4 +206,4 @@ def big_shoe_rebounds
             end
         end
     end
-end 
+end
