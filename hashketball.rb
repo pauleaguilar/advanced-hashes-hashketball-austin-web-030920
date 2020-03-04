@@ -141,20 +141,22 @@ def team_names
   teams
 end
 
-def player_numbers (team_name)
-  player_numbers_list = []
-  game_hash.each do |team, team_details_hash|
-    if team_details_hash[:name] == team_name
-      team_details_hash[:players].each do |player|
-        player.each do |key, value|
-          if key == :number
-            player_numbers_list << value
+
+def player_numbers(team_name)
+  #returns array of jersey numbers for that team_name
+  nums = []
+  game_hash.each do |place, team|
+    if team[:team_name] == team_name
+      team.each do |attributes, data|
+        if attributes == :players
+          data.each do |player|
+            nums << player[:number]
           end
         end
       end
     end
   end
-  player_numbers_list
+  nums
 end
 
 
