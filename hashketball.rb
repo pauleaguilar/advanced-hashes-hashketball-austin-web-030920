@@ -123,15 +123,15 @@ def game_hash
 end
 
 
-def num_points_scored (player_name)
-    player_points = {}
-    game_hash.each do |location, team_data|
-        team_data[:players].each do |player, player_data|
-            player_points[player] = player_data[:points]
-        end
+def num_points_scored(athlete)
+  solution = nil
+  game_hash.each do |location, team_data|
+    game_hash[location][:players].each do |attribute|                         
+      attribute.has_value?(athlete) ? solution = attribute.fetch(:points).to_i : nil      
+      end
     end
-    return player_points[player_name]
-end
+    solution
+  end
 
 
 def shoe_size (player_name)
