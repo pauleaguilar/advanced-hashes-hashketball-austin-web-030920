@@ -5,7 +5,7 @@ require "pry"
 
 
 def game_hash
-  hash = {  
+  hash = {
     :home => {
         :team_name => "Brooklyn Nets",
         :colors => ["Black", "White"],
@@ -29,7 +29,7 @@ def game_hash
             :steals => 12,
             :blocks => 12,
             :slam_dunks => 7
-            },      
+            },
           "Brook Lopez" => {
             :number => 11,
             :shoe => 17,
@@ -39,7 +39,7 @@ def game_hash
             :steals => 3,
             :blocks => 1,
             :slam_dunks => 15
-            },    
+            },
           "Mason Plumlee" => {
             :number => 1,
             :shoe => 19,
@@ -49,7 +49,7 @@ def game_hash
             :steals => 3,
             :blocks => 8,
             :slam_dunks => 5
-            },    
+            },
           "Jason Terry" => {
             :number => 31,
             :shoe => 15,
@@ -59,7 +59,7 @@ def game_hash
             :steals => 4,
             :blocks => 11,
             :slam_dunks => 1
-            },                                              
+            },
           }
         },
     :away => {
@@ -85,7 +85,7 @@ def game_hash
             :steals => 7,
             :blocks => 15,
             :slam_dunks => 10
-            },      
+            },
           "DeSagna Diop" => {
             :number => 2,
             :shoe => 14,
@@ -95,7 +95,7 @@ def game_hash
             :steals => 4,
             :blocks => 5,
             :slam_dunks => 5
-            },    
+            },
           "Ben Gordon" => {
             :number => 8,
             :shoe => 15,
@@ -105,7 +105,7 @@ def game_hash
             :steals => 1,
             :blocks => 1,
             :slam_dunks => 0
-            },    
+            },
           "Brendan Haywood" => {
             :number => 33,
             :shoe => 15,
@@ -115,11 +115,11 @@ def game_hash
             :steals => 22,
             :blocks => 5,
             :slam_dunks => 12
-            },                                              
+            },
           }
           }
         }
-    return hash 
+    return hash
 end
 
 
@@ -148,7 +148,7 @@ end
 def team_colors (team)
     if game_hash[:home][:team_name] == team
         return game_hash[:home][:colors]
-    else 
+    else
         return game_hash[:away][:colors]
     end
 end
@@ -182,9 +182,9 @@ end
 
 
 def player_stats(player_name)
-    if game_hash[:home][:players].key?(player_name) == true 
+    if game_hash[:home][:players].key?(player_name) == true
         return game_hash[:home][:players][player_name]
-    elsif game_hash[:away][:players].key?(player_name) == true 
+    elsif game_hash[:away][:players].key?(player_name) == true
         return game_hash[:away][:players][player_name]
     end
 end
