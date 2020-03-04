@@ -169,9 +169,11 @@ end
 
 
 def team_names
-  game_hash.map do |place, team|
-    team[:team_name]
+  teams = []
+  game_hash.each do |location, team_data|
+    teams << team_data[:team_name]
   end
+  teams
 end
 
 def player_numbers (team_name)
