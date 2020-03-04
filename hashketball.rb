@@ -205,7 +205,7 @@ def big_shoe_rebounds
               biggest = biggest_shoes.max
                 if numbers == 19
                   stats.each do |stat, numbers|
-                    if stat == :rebounds 
+                    if stat == :rebounds
                       a = numbers
                     end
                   end
